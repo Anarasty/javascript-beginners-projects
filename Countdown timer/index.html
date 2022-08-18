@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <p id="demo"></p>
+
+    <script>
+      const countDownDate = new Date("May 9, 2024 12:00:00").getTime(); // Set the date we're counting down to
+
+      const x = setInterval(function () { // Update the count down every 1 second
+        const now = new Date().getTime(); // Get todays date and time
+        const distance = countDownDate - now; // Find the distance between now an the count down date
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));// Time calculations for days, hours, minutes and seconds
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("demo").innerHTML =
+          days + "d " + hours + "h " + minutes + "m " + seconds + "s "; // Display the result in the element with id="demo"
+
+        if (distance < 0) { // If the count down is finished, write some text
+          clearInterval(x);
+          document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
