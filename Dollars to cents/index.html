@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dollars to cents</title>
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: rgb(203, 155, 0);
+            width: 50%;
+            height: 200px;
+            margin: 50px auto;
+            line-height: 50px;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 15px;
+        }
+    </style>
+
+    <div class="container">
+        <h1>Dollars to cents converter</h1>
+        <form>
+            <label for="dollars">Dollars</label>
+            <input type="text" id="dollars" placeholder="Enter dollar amount">
+        </form>
+        <h3>Cents: <span id="cents"></span></h3>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
