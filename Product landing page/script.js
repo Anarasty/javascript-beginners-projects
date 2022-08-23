@@ -9,6 +9,32 @@ const white = document.querySelector(".white");
 
 const colors = document.querySelectorAll(".color");
 
+const navMenu = document.querySelector('.menu');
+const navToggle = document.querySelector(".menu-btn");
+if(navToggle) {
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle("active");
+  });
+}
+
+const navLink = document.querySelectorAll('.nav-link');
+function linkAction() {
+  const navMenu = document.querySelector('.menu');
+  navMenu.classList.remove('active');
+}
+navLink.forEach(n => n.addEventListener('click', linkAction));
+
+const navbar = document.querySelector('.navbar');
+window.onscroll = () => {
+  if(this.scrollY > 10) {
+    navbar.classList.add('sticky');
+  } else {
+    navbar.classList.remove('sticky');
+  }
+};
+
+
+
 const info = [
   {
     src: "iphone13_black.png",
